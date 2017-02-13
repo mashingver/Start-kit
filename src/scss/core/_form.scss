@@ -1,0 +1,113 @@
+/**
+ * Form.
+ */
+
+/**
+ * Input.
+ * 1. Removes awkward default styles on some inputs for iOS
+ * 2. The .6rem vertically centers text on FF, ignored by Webkit
+ * 3. Remove rounded corners that iOS applies to all `input` buttons, see: https://github.com/necolas/normalize.css/issues/178
+ */
+
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='url'],
+textarea,
+select {
+	appearance: none; // [1]
+	background-color: transparent;
+	padding: .6rem 1.0rem; // [2]
+	border: 1px solid black;
+	border-radius: 0; // [3]
+	box-shadow: none;
+	width: 100%;
+
+	&:focus {
+		border-color: mediumseagreen;
+		outline: 0;
+	}
+}
+
+/**
+ * Checkbox and radio-button.
+ */
+
+input[type='checkbox'],
+input[type='radio'] {
+	display: inline;
+}
+
+/**
+ * Textarea.
+ * 1. Disable `textarea`s from being resized
+ */
+
+textarea {
+	resize: none; // [1]
+	min-height: 6.5rem;
+}
+
+/**
+ * Legend
+ * Fix for IE and old versions of some other browsers not wrapping text within a `legend`. *
+ * 1. Enable line-wrapping in IE8+.
+ * 2. Enable line-wrapping in old versions of some other browsers.
+ * See: http://www.456bereastreet.com/archive/201210/how_to_line_wrap_text_in_legend_elements_even_in_ie/
+
+ */
+
+legend {
+	display: table; // [1]
+	white-space: normal; // [2]
+}
+
+/**
+ * Submit, reset, button.
+ */
+
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+	background-color: black;
+	border: 1px solid black;
+	border-radius: 0;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1rem;
+	font-weight: 700;
+	height: 4rem;
+	letter-spacing: .1rem;
+	line-height: 4rem;
+	padding: 0 3rem;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+
+	&:focus,
+	&:hover {
+		background-color: lighten(black, 10);
+		border-color: lighten(black, 10);
+		outline: 0;
+	}
+}
+
+/**
+ * Disabled state.
+ */
+
+button[disabled],
+input[disabled],
+select[disabled],
+textarea[disabled] {
+	cursor: not-allowed !important;
+	text-shadow: none !important;
+	box-shadow: none !important;
+	opacity: .8 !important;
+}

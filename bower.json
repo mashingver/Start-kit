@@ -1,0 +1,21 @@
+{
+  "name": "start-kit",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "mashingver"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "normalize-css": "normalize.css#^5.0.0"
+  }
+}

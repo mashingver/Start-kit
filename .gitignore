@@ -1,0 +1,4 @@
+src/vendors/
+node_modules/
+build/
+.idea/
