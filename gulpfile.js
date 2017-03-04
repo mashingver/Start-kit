@@ -41,12 +41,13 @@ gulp.task('scss', ['scsslint'], function () {
 	log('Compiling SCSS --> CSS');
 	return gulp.src(config.src.scss)
 		.pipe($.plumber())
-		.pipe($.if(config.env == 'development', $.sourcemaps.init()))
+		.pipe($.sourcemaps.init())
 		.pipe($.sass())
 		.pipe($.cssimport(config.cssimport))
 		.pipe($.autoprefixer(config.autoprefixer))
-		.pipe($.if(config.env == 'development', $.sourcemaps.write()))
-		.pipe($.if(config.env == 'production', $.cssnano()))
+		.pipe($.cssnano())
+		.pipe($.rename({extname: '.min.css'}))
+		.pipe($.sourcemaps.write('./'))
 		.pipe(gulp.dest(config.build.css))
 		.pipe(reload({stream: true}));
 });
