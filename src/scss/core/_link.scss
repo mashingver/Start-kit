@@ -4,11 +4,9 @@
 
 a {
 	text-decoration: none;
-	transition: color .2s;
-	color: black;
 
 	&:focus,
 	&:hover {
-		color: lighten(black, 10);
+
 	}
 }
