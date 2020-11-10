@@ -2,7 +2,7 @@ const gulp = require("gulp");
 const del = require("del");
 const browserSync = require("browser-sync").create();
 const extender = require("gulp-html-extend");
-const $ = require("gulp-load-plugins")({ lazy: true });
+const $ = require("gulp-load-plugins")({lazy: true});
 const pngquant = require("imagemin-pngquant");
 const svgSprite = require("gulp-svg-sprite");
 
@@ -20,7 +20,7 @@ const config = {
     fonts: buildFolder + "fonts/"
   },
   src: {
-    html: srcFolder + "html/index.html",
+    html: srcFolder + "html/**/*.html",
     scss: srcFolder + "scss/styles.scss",
     js: srcFolder + "js/app.js",
     images: srcFolder + "images/**/*.*",
@@ -119,7 +119,7 @@ function scss() {
     .pipe($.cssimport(config.cssimport))
     .pipe($.autoprefixer(config.autoprefixer))
     .pipe($.cssnano())
-    .pipe($.rename({ extname: ".min.css" }))
+    .pipe($.rename({extname: ".min.css"}))
     .pipe($.sourcemaps.write("./"))
     .on("error", $.util.log)
     .pipe(gulp.dest(config.build.css))
@@ -134,7 +134,7 @@ function js() {
     .pipe($.plumber())
     .pipe($.rigger())
     .pipe($.uglify())
-    .pipe($.rename({ extname: ".min.js" }))
+    .pipe($.rename({extname: ".min.js"}))
     .on("error", $.util.log)
     .pipe(gulp.dest(config.build.js))
     .pipe(browserSync.stream());
@@ -177,7 +177,7 @@ function fonts() {
 // Compile build
 function build(done) {
   log("Compiling build");
-  gulp.series(html, scss, js, sprite, images, favicons, fonts)(done);
+  gulp.series(fonts, sprite, images, favicons, html, scss, js)(done);
 }
 
 // Compile vendors CSS
@@ -229,6 +229,9 @@ function watchFiles() {
 exports.default = gulp.series(clean, build, gulp.parallel(watchFiles, browserSyncServer));
 exports.production = gulp.series(clean, build, vendors);
 exports.vendors = vendors;
+exports.html = html;
+exports.scss = scss;
+exports.js = js;
 
 
 //Helpers
