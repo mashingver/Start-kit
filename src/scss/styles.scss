@@ -21,11 +21,3 @@
 
 // States
 @import "states/index";
-
-body {
-	@at-root {
-		blockquote {
-			background-color: yellow;
-		}
-	}
-}
