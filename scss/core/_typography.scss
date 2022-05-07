@@ -1,0 +1,57 @@
+/**
+* Typography
+* 1. Make text legible
+* 2. Fonts on OSX will look more consistent with other systems that do not render text using sub-pixel anti-aliasing
+*/
+
+html {
+  text-rendering: optimizeLegibility; // [1]
+  -moz-osx-font-smoothing: grayscale; // [2]
+  -webkit-font-smoothing: antialiased; // [2]
+  font-size: 16px;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}

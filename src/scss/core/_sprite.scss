@@ -1,0 +1,14 @@
+%svg-common {
+	background: url("../images/sprite.svg") no-repeat;
+}
+
+.svg-icon-full-stack-developer {
+	@extend %svg-common;
+	background-position: 0 0;
+}
+
+.svg-icon-full-stack-developer-dims {
+	width: 122.88px;
+	height: 87.69px;
+}
+

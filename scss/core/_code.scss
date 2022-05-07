@@ -1,0 +1,25 @@
+/**
+ * Code
+ */
+
+code {
+  background: lightgray;
+  border-radius: 0.4rem;
+  font-size: 86%;
+  margin: 0 0.2rem;
+  padding: 0.2rem 0.5rem;
+  white-space: nowrap;
+}
+
+pre {
+  background: lightgray;
+  border-left: 2px solid #000;
+  overflow-y: hidden;
+
+  & > code {
+    border-radius: 0;
+    display: block;
+    padding: 1rem 1.5rem;
+    white-space: pre;
+  }
+}
