@@ -46,7 +46,7 @@
     "gulp-util": "^3.0.7",
     "gulp.spritesmith": "^6.12.1",
     "imagemin-pngquant": "^8.0.0",
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.0",
     "prettier": "^2.4.1",
     "sass": "^1.42.1",
     "stylelint": "^13.13.1",
